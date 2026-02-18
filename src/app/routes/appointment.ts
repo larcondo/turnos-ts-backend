@@ -1,9 +1,16 @@
 import { Router } from "express";
-import { allAppointments, createAppointment } from "../controllers/appointment";
+import {
+  allAppointments,
+  appointmentById,
+  createAppointment,
+  addPatientRequest,
+} from "../controllers/appointment";
 
 const router: Router = Router();
 
 router.get("/", allAppointments);
+router.get("/:id", appointmentById);
 router.post("/", createAppointment);
+router.post("/:id", addPatientRequest);
 
 export default router;

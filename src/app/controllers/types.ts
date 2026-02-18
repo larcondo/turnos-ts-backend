@@ -1,3 +1,7 @@
+export interface AppointmentByIdParams {
+  id: string;
+}
+
 export interface CreateProfessionalBody {
   name: string;
   position: string;
@@ -9,6 +13,15 @@ export interface CreateAppointmentBody {
   startHour: number;
   endHour: number;
   duration: number;
+}
+
+export interface AddPatientRequestBody {
+  patientId: string;
+  timeOffset: number;
+}
+
+export interface AddPatientRequestParams {
+  id: string;
 }
 
 export interface CreatePatientBody {

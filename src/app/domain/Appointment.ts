@@ -5,3 +5,9 @@ export interface ICreateAppointmentDTO {
   endHour: number;
   duration: number;
 }
+
+export interface IAddRequestDTO {
+  id: string;
+  patientId: string;
+  timeOffset: number;
+}

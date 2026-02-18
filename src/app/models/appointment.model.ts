@@ -4,12 +4,19 @@ import { IProfessional } from "./professional.model";
 const HORA = 60 * 60 * 1000;
 const MINUTO = 60 * 1000;
 
+export interface IRequest {
+  patient: Types.ObjectId;
+  timeOffset: number;
+  status: number;
+}
+
 export interface IAppointment {
   professional: Types.ObjectId;
   date: Date;
   startHour: number;
   endHour: number;
   duration: number;
+  requests: IRequest[];
 }
 
 export interface AppointmentDocument extends IAppointment {
@@ -29,6 +36,22 @@ export const omitTimestamps: ProjectionType<AppointmentDocument> = {
   createdAt: 0,
   updatedAt: 0,
 };
+
+const requestSchema = new Schema<IRequest>({
+  patient: {
+    type: Schema.Types.ObjectId,
+    required: true,
+    ref: "Patient",
+  },
+  timeOffset: {
+    type: Number,
+    required: true,
+  },
+  status: {
+    type: Number,
+    required: true,
+  },
+});
 
 const appointmentSchema = new Schema<AppointmentDocument>(
   {
@@ -54,6 +77,11 @@ const appointmentSchema = new Schema<AppointmentDocument>(
       type: Number,
       min: 30 * MINUTO,
       required: true,
+    },
+    requests: {
+      type: [requestSchema],
+      required: true,
+      default: [],
     },
   },
   { timestamps: true },
