@@ -10,3 +10,15 @@ export interface CreateAppointmentBody {
   endHour: number;
   duration: number;
 }
+
+export interface CreatePatientBody {
+  name: string;
+  birthDate: string;
+  pin?: string;
+}
+
+export interface UpdatePatientBody {
+  name: string;
+  birthDate?: string;
+  pin?: string;
+}

@@ -1,6 +1,7 @@
 import express from "express";
 import professionalRouter from "../app/routes/professional";
 import appointmentRouter from "../app/routes/appointment";
+import patientRouter from "../app/routes/patient";
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.get("/", (_, res) => {
 
 app.use("/api/professional", professionalRouter);
 app.use("/api/appointments", appointmentRouter);
+app.use("/api/patient", patientRouter);
 
 app.use((_, res) => {
   res.status(404).send("404 Not Found");
