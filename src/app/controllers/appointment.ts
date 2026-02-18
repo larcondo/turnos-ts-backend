@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
-import DbAppointmentRepository from "../repositories/appointment.dbRepository";
-import AppointmentService from "../services/appointment.service";
+import DbAppointmentRepository from "@repositories/appointment.dbRepository";
+import AppointmentService from "@services/appointment.service";
 import {
   AddPatientRequestBody,
   AddPatientRequestParams,

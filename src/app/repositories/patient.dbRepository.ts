@@ -1,8 +1,5 @@
-import PatientModel, {
-  IPatient,
-  omitTimestamps,
-} from "../models/patient.model";
-import { ICreatePatientDTO, IUpdatePatientDTO } from "../domain/Patient";
+import PatientModel, { IPatient, omitTimestamps } from "@models/patient.model";
+import { ICreatePatientDTO, IUpdatePatientDTO } from "@domain/Patient";
 import { PatientRepository } from "./patient.repository";
 
 class DbPatientRepository implements PatientRepository {

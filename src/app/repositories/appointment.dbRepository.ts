@@ -1,11 +1,11 @@
 import { Types } from "mongoose";
-import { IAddRequestDTO, ICreateAppointmentDTO } from "../domain/Appointment";
+import { IAddRequestDTO, ICreateAppointmentDTO } from "@domain/Appointment";
 import AppointmentModel, {
   IPopulatedAppointment,
   IRequest,
   omitTimestamps,
-} from "../models/appointment.model";
-import { IProfessional } from "../models/professional.model";
+} from "@models/appointment.model";
+import { IProfessional } from "@models/professional.model";
 import { AppointmentRepository } from "./appointment.repository";
 
 class DbAppointmentRepository implements AppointmentRepository {

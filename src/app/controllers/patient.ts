@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
-import DbPatientRepository from "../repositories/patient.dbRepository";
-import PatientService from "../services/patient.service";
+import DbPatientRepository from "@repositories/patient.dbRepository";
+import PatientService from "@services/patient.service";
 import { CreatePatientBody, UpdatePatientBody } from "./types";
 
 const patientRepo = new DbPatientRepository();

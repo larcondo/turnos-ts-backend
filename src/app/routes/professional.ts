@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAll, createProfessional } from "../controllers/professional";
+import { getAll, createProfessional } from "@controllers/professional";
 
 const router: Router = Router();
 

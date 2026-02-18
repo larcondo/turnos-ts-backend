@@ -1,7 +1,7 @@
 import express from "express";
-import professionalRouter from "../app/routes/professional";
-import appointmentRouter from "../app/routes/appointment";
-import patientRouter from "../app/routes/patient";
+import professionalRouter from "@routes/professional";
+import appointmentRouter from "@routes/appointment";
+import patientRouter from "@routes/patient";
 
 const app = express();
 

@@ -1,8 +1,8 @@
 import ProfessionalModel, {
   IProfessional,
   omitTimestamps,
-} from "../models/professional.model";
-import { ICreateProfessionalDTO } from "../domain/Professional";
+} from "@models/professional.model";
+import { ICreateProfessionalDTO } from "@domain/Professional";
 import { ProfessionalRepository } from "./professional.repository";
 
 class DbProfessionalRepository implements ProfessionalRepository {

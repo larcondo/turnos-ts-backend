@@ -1,6 +1,6 @@
-import { IAddRequestDTO, ICreateAppointmentDTO } from "../domain/Appointment";
-import { IPopulatedAppointment, IRequest } from "../models/appointment.model";
-import { AppointmentRepository } from "../repositories/appointment.repository";
+import { IAddRequestDTO, ICreateAppointmentDTO } from "@domain/Appointment";
+import { IPopulatedAppointment, IRequest } from "@models/appointment.model";
+import { AppointmentRepository } from "@repositories/appointment.repository";
 
 class AppointmentService {
   private appointmentRepository: AppointmentRepository;

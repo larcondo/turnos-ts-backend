@@ -1,5 +1,5 @@
-import { IAddRequestDTO, ICreateAppointmentDTO } from "../domain/Appointment";
-import { IPopulatedAppointment, IRequest } from "../models/appointment.model";
+import { IAddRequestDTO, ICreateAppointmentDTO } from "@domain/Appointment";
+import { IPopulatedAppointment, IRequest } from "@models/appointment.model";
 
 export interface AppointmentRepository {
   findAll(): Promise<IPopulatedAppointment[]>;

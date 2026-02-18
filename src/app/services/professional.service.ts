@@ -1,6 +1,6 @@
-import { ICreateProfessionalDTO } from "../domain/Professional";
-import { IProfessional } from "../models/professional.model";
-import { ProfessionalRepository } from "../repositories/professional.repository";
+import { ICreateProfessionalDTO } from "@domain/Professional";
+import { IProfessional } from "@models/professional.model";
+import { ProfessionalRepository } from "@repositories/professional.repository";
 
 class ProfessionalService {
   private professionalRepository: ProfessionalRepository;

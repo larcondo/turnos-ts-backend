@@ -4,6 +4,18 @@
     // File Layout
     // "rootDir": "./src",
     "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@controllers/*": ["src/app/controllers/*"],
+      "@domain/*": ["src/app/domain/*"],
+      "@models/*": ["src/app/models/*"],
+      "@repositories/*": ["src/app/repositories/*"],
+      "@routes/*": ["src/app/routes/*"],
+      "@services/*": ["src/app/services/*"]
+    },
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module

@@ -1,5 +1,5 @@
-import { ICreateProfessionalDTO } from "../domain/Professional";
-import { IProfessional } from "../models/professional.model";
+import { ICreateProfessionalDTO } from "@domain/Professional";
+import { IProfessional } from "@models/professional.model";
 
 export interface ProfessionalRepository {
   findAll(): Promise<IProfessional[]>;

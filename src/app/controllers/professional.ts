@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
-import DbProfessionalRepository from "../repositories/professional.dbRepository";
-import ProfessionalService from "../services/professional.service";
+import DbProfessionalRepository from "@repositories/professional.dbRepository";
+import ProfessionalService from "@services/professional.service";
 import { CreateProfessionalBody } from "./types";
 
 const proRepository = new DbProfessionalRepository();

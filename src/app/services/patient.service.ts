@@ -1,6 +1,6 @@
-import { ICreatePatientDTO, IUpdatePatientDTO } from "../domain/Patient";
-import { IPatient } from "../models/patient.model";
-import { PatientRepository } from "../repositories/patient.repository";
+import { ICreatePatientDTO, IUpdatePatientDTO } from "@domain/Patient";
+import { IPatient } from "@models/patient.model";
+import { PatientRepository } from "@repositories/patient.repository";
 
 class PatientService {
   private patientRepository: PatientRepository;

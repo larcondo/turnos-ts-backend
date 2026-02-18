@@ -4,7 +4,7 @@ import {
   appointmentById,
   createAppointment,
   addPatientRequest,
-} from "../controllers/appointment";
+} from "@controllers/appointment";
 
 const router: Router = Router();
 
