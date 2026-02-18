@@ -1,4 +1,4 @@
-export interface ICreateAppointmentDTO {
+export interface ICreateAssignmentDTO {
   professional: string;
   date: string;
   startHour: number;
