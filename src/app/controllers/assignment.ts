@@ -1,52 +1,52 @@
 import { RequestHandler } from "express";
-import DbAppointmentRepository from "@repositories/appointment.dbRepository";
-import AppointmentService from "@services/appointment.service";
+import DbAssignmentRepository from "@repositories/assignment.dbRepository";
+import AssignmentService from "@services/assignment.service";
 import {
   AddPatientRequestBody,
   AddPatientRequestParams,
-  AppointmentByIdParams,
-  CreateAppointmentBody,
+  AssignmentByIdParams,
+  CreateAssignmentBody,
 } from "./types";
 
-const appoRepository = new DbAppointmentRepository();
-const appoService = new AppointmentService(appoRepository);
+const assignmentRepository = new DbAssignmentRepository();
+const assignmentService = new AssignmentService(assignmentRepository);
 
-export const allAppointments: RequestHandler = async (_, res) => {
+export const allAssignments: RequestHandler = async (_, res) => {
   try {
-    const appointments = await appoService.getAllAppointments();
-    res.status(200).json(appointments);
+    const assignments = await assignmentService.getAllAssignments();
+    res.status(200).json(assignments);
   } catch (error) {
     console.log(error);
     res.status(500).send("Internal Server Error");
   }
 };
 
-export const appointmentById: RequestHandler<
-  AppointmentByIdParams,
+export const assignmentById: RequestHandler<
+  AssignmentByIdParams,
   unknown,
   unknown,
   unknown
 > = async (req, res) => {
   try {
     const { id } = req.params;
-    const appointment = await appoService.getAppointmentById(id);
-    res.status(200).json(appointment);
+    const assignment = await assignmentService.getAssignmentById(id);
+    res.status(200).json(assignment);
   } catch (error) {
     console.log(error);
     res.status(500).send("Internal Server Error");
   }
 };
 
-export const createAppointment: RequestHandler<
+export const createAssignment: RequestHandler<
   unknown,
   unknown,
-  CreateAppointmentBody,
+  CreateAssignmentBody,
   unknown
 > = async (req, res) => {
   try {
     const { professional, startHour, endHour, duration, date } = req.body;
 
-    const appointment = await appoService.createAppointment({
+    const assignment = await assignmentService.createAssignment({
       professional,
       date,
       duration,
@@ -54,7 +54,7 @@ export const createAppointment: RequestHandler<
       endHour,
     });
 
-    res.status(201).json(appointment);
+    res.status(201).json(assignment);
   } catch (error) {
     let errMsg = "Internal Server Error";
     if (error instanceof Error) {
@@ -75,7 +75,7 @@ export const addPatientRequest: RequestHandler<
     const { id } = req.params;
     const { patientId, timeOffset } = req.body;
 
-    const patientRequest = await appoService.addPatientRequest({
+    const patientRequest = await assignmentService.addPatientRequest({
       id,
       timeOffset,
       patientId,

@@ -1,4 +1,4 @@
-export interface AppointmentByIdParams {
+export interface AssignmentByIdParams {
   id: string;
 }
 
@@ -7,7 +7,7 @@ export interface CreateProfessionalBody {
   position: string;
 }
 
-export interface CreateAppointmentBody {
+export interface CreateAssignmentBody {
   professional: string;
   date: string;
   startHour: number;

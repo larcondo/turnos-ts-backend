@@ -1,6 +1,6 @@
 import express from "express";
 import professionalRouter from "@routes/professional";
-import appointmentRouter from "@routes/appointment";
+import assignmentRouter from "@routes/assignment";
 import patientRouter from "@routes/patient";
 
 const app = express();
@@ -12,7 +12,7 @@ app.get("/", (_, res) => {
 });
 
 app.use("/api/professional", professionalRouter);
-app.use("/api/appointments", appointmentRouter);
+app.use("/api/assignment", assignmentRouter);
 app.use("/api/patient", patientRouter);
 
 app.use((_, res) => {

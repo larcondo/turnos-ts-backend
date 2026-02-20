@@ -10,7 +10,7 @@ export interface IRequest {
   status: number;
 }
 
-export interface IAppointment {
+export interface IAssignment {
   professional: Types.ObjectId;
   date: Date;
   startHour: number;
@@ -19,20 +19,20 @@ export interface IAppointment {
   requests: IRequest[];
 }
 
-export interface AppointmentDocument extends IAppointment {
+export interface AssignmentDocument extends IAssignment {
   createdAt: Date;
   updatedAt: Date;
 }
 
 // Typo para resultados del "populate"
-export interface IPopulatedAppointment extends Omit<
-  IAppointment,
+export interface IPopulatedAssignment extends Omit<
+  IAssignment,
   "professional"
 > {
   professional: IProfessional;
 }
 
-export const omitTimestamps: ProjectionType<AppointmentDocument> = {
+export const omitTimestamps: ProjectionType<AssignmentDocument> = {
   createdAt: 0,
   updatedAt: 0,
 };
@@ -53,7 +53,7 @@ const requestSchema = new Schema<IRequest>({
   },
 });
 
-const appointmentSchema = new Schema<AppointmentDocument>(
+const assignmentSchema = new Schema<AssignmentDocument>(
   {
     professional: {
       type: Schema.Types.ObjectId,
@@ -87,16 +87,16 @@ const appointmentSchema = new Schema<AppointmentDocument>(
   { timestamps: true },
 );
 
-appointmentSchema.set("toJSON", {
+assignmentSchema.set("toJSON", {
   transform: (doc, ret) => {
     const { __v, ...rest } = ret;
     return rest;
   },
 });
 
-const AppointmentModel = model<AppointmentDocument>(
-  "Appointment",
-  appointmentSchema,
+const AssignmentModel = model<AssignmentDocument>(
+  "Assignment",
+  assignmentSchema,
 );
 
-export default AppointmentModel;
+export default AssignmentModel;
